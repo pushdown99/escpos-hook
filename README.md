@@ -17,16 +17,19 @@ tags: [eReceipt, POS, ESC/P, iot]
 ~~~console
 
 +--------+      +--------+      +--------+      +--------+      +--------+   
-|  POS   | ---> |  COM3  | ---> |  COM2  | ---> |  COM1  | ---> |  PRN   |
+|  POS   | ---> |  COM3  | ---> |  COM2  | ---> |  COM1  | ---> | PRINT  |
 +--------+      +--------+      +--------+      +--------+      +--------+
                      |               |
                 +-------------------------+
-                | virtual serial port     |                     +--------+
+                | VIRTUAL SERIAL PORT DRV |                     +--------+
                 | ======================= | <-----------------> | SERVER | 
                 | - vspd, com0com         |                     +--------+
                 +-------------------------+
 
 ~~~
+
+[http://com0com.sourceforge.net/](http://com0com.sourceforge.net/)
+[https://www.eltima.com/vspd-post-download.html](https://www.eltima.com/vspd-post-download.html)
 
 ---
 
