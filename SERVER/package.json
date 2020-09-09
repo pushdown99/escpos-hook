@@ -1,0 +1,23 @@
+{
+  "name": "escp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "escpos": "^3.0.0-alpha.6",
+    "escpos-console": "^3.0.0-alpha.2",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "iconv-lite": "^0.6.2",
+    "moment-timezone": "^0.5.31",
+    "path": "^0.12.7"
+  }
+}
