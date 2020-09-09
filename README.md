@@ -28,6 +28,8 @@ tags: [eReceipt, POS, ESC/P, iot]
 
 ~~~
 
+![](images/vspd.png)
+
 - [com0com](http://com0com.sourceforge.net/)
 - [vspd](https://www.eltima.com/vspd-post-download.html)
 
