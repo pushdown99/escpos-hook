@@ -6,10 +6,11 @@ tags: [eReceipt, POS, ESC/P, iot]
 
 # 전자영수증 (eReceipt)
 ---
-1.[서비스 아키텍처](#서비스-아키텍처)
-2.[가상시리얼](#가상시리얼)
-3.[POS (Windows)](#pos-windows)
-4.[서버 (Ubuntu)](#서버-ubuntu)
+
+1. [서비스 아키텍처](#서비스-아키텍처) 
+2. [가상시리얼](#가상시리얼) 
+3. [POS](#pos-windows) 
+4. [서버](#서버-ubuntu) 
 
 ---
 
