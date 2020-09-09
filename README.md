@@ -42,9 +42,10 @@ ESCP-SVR|ESC/P 명령어 처리 서버 모듈|
 
 ## 가상시리얼
 
-
+#### 가상시리얼 포트 드라이버 설정 화면 (예: vspd)
 ![](images/vspd.png)
 
+#### 가상시리얼 포트 드라이버 다운로드
 - [com0com](http://com0com.sourceforge.net/)
 - [vspd](https://www.eltima.com/vspd-post-download.html)
 
