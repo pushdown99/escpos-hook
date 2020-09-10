@@ -1,6 +1,6 @@
 ---
 title: 전자영수증 
-author: haeyeon.hwang
+author: 황해연
 tags: [eReceipt, POS, ESC/P, iot]
 ---
 
