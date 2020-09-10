@@ -76,6 +76,7 @@ PRINTER AUDIT: COM1 -> COM2
 
 #### 쓰레드처럼 독립적인 처리 루틴 (goroutine) 활용 
 - [https://gobyexample.com/goroutines](https://gobyexample.com/goroutines) 참고
+![](images/goroutines.png)
 
 ~~~go
 
