@@ -40,17 +40,16 @@ ESCP-POS|ESC/P 명령어 중개 모듈
 ESCP-SVR|ESC/P 명령어 처리 서버 모듈|
 
 ## 가상 시리얼 포트 드라이버
-널-모뎀 에뮬레이터 (Null-modem emulator)
-2개의 
+- 널-모뎀 에뮬레이터 (Null-modem emulator)
+- 2개의 가상 COM 포트를 제공 
+![](images/com0com.jpg)
 
+#### 가상시리얼 포트 드라이버 다운로드
+- [com0com](http://com0com.sourceforge.net/)
+- [vspd](https://www.eltima.com/vspd-post-download.html)
 
 #### 가상시리얼 포트 드라이버 설정 화면 (예: vspd)
 ![](images/vspd.png)
-
-#### 가상시리얼 포트 드라이버 다운로드
-![](images/com0com.jpg)
-- [com0com](http://com0com.sourceforge.net/)
-- [vspd](https://www.eltima.com/vspd-post-download.html)
 
 ---
 
