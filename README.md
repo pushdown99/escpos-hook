@@ -53,38 +53,45 @@ ESCP-SVR|ESC/P 명령어 처리 서버 모듈|
 
 ## POS (Windows)
 
+#### ESC/P POS의 기능
+기능|설명|비고
+--|--|--
+가상 시리얼 포트 드라이버|POS와 연결할 가상 시리얼 포트 생성 (port pairing)|
+인증장치 연동|NFC, QR코드 리더기 등 인증장치 연동|
+인증 프록시|사용자인증 proxy 서버 역할|
+시리얼 I/O|시리얼 포트 데이터 입출력|
+프린터 릴레이|POS-프린터 명령어 중개|
+영수증출력제어|POS-프린터 전자/종이 영수증 출력제어|
+
 ~~~console
-             
 +------+     +------+     +------+
-| COM2 | --- | ESPC | --- | COM1 |
+| COM2 | --- | ESCP | --- | COM1 |
 +------+     +------+     +------+ 
 
-POS print-out (com2 -> com1)
-+------+     +------+     +------+
-| COM2 | --> | ESPC | --> | COM1 |
-+------+     +------+     +------+ 
-
-PRINTER audit (com1 -> com2)
-+------+     +------+     +------+
-| COM2 | <-- | ESPC | <-- | COM1 |
-+------+     +------+     +------+ 
-
-
+POS PRINT-OUT: COM2 -> COM1
+PRINTER AUDIT: COM1 -> COM2
 ~~~
+
+#### 쓰레드처럼 독립적인 처리 루틴 (goroutine) 활용 
+- [https://gobyexample.com/goroutines](https://gobyexample.com/goroutines) 참고
 
 ~~~go
 
+func Run(in io.ReadWriteCloser, out io.ReadWriteCloser) {
+	for {
+    }
+}
+
 func main() {
-	var wait sync.WaitGroup
-	wait.Add(2)
+  var wait sync.WaitGroup
+  wait.Add(2)
 
-	in := Open(IN)
-	out := Open(OUT)
+  in := Open(IN)
+  out := Open(OUT)
 
-	// bi-direction communication.
-	go Run(in, out)
-	go Run(out, in)
-	wait.Wait()
+  go Run(in, out)
+  go Run(out, in)
+  wait.Wait()
 }
 
 ~~~
