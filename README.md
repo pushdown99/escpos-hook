@@ -132,4 +132,8 @@ This is on a separate line
 
 ```math
 a^2+b^2=c^2
+
+a%5E2%2Bb%5E2%3Dc%5E2
 ```
+
+$ a%5E2%2Bb%5E2%3Dc%5E2 $
