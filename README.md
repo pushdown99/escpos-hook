@@ -125,3 +125,11 @@ https://stackoverflow.com/questions/11256433/how-to-show-math-equations-in-gener
  ![\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}](https://latex.codecogs.com/svg.latex?x%3D%5Cfrac%7B-b%5Cpm%5Csqrt%7Bb%5E2-4ac%7D%7D%7B2a%7D)
 
  $ \sum_{\forall i}{x_i^{2}} $
+
+ This math is inline $`a^2+b^2=c^2`$.
+
+This is on a separate line
+
+```math
+a^2+b^2=c^2
+```
