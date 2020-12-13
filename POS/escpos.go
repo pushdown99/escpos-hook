@@ -7,16 +7,38 @@ package main
 import (
 	"bytes"
 	"encoding/hex"
-	"encoding/json"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"sync"
 	"time"
 
 	"github.com/jacobsa/go-serial/serial"
+	"encoding/json"
+	"io/ioutil"
 )
+
+//////////////////////////////////////////////////////////////
+
+type Config struct {
+	Name  		string 
+	Register	string
+	Address		string
+	POS			string
+	Printer		string
+    Using 		bool
+}
+
+var config = Config {
+	Name: 		"Input name",
+	Register: 	"Input business register number",
+	Address: 	"Input address",
+	POS: 		"COM1",
+	Printer: 	"COM2",
+	Using: 		true,
+};
+
+//////////////////////////////////////////////////////////////
 
 type JsonData struct {
 	Data      string
@@ -54,7 +76,8 @@ func Run(in io.ReadWriteCloser, out io.ReadWriteCloser) {
 				fmt.Println(hex.Dump(buf))
 				d := JsonData{Data: hex.EncodeToString(buf), Timestamp: time.Now().Unix()}
 				b, _ := json.Marshal(d)
-				resp, err := http.Post("http://debian.tric.kr:9901", "application/json", bytes.NewBuffer(b))
+				//resp, err := http.Post("http://debian.tric.kr:9901", "application/json", bytes.NewBuffer(b))
+				resp, err := http.Post("https://tric.kr/receipt/123", "application/json", bytes.NewBuffer(b))
 				if err != nil {
 					fmt.Println("Error: ", err)
 				} else {
@@ -77,11 +100,19 @@ func Run(in io.ReadWriteCloser, out io.ReadWriteCloser) {
 	}
 }
 
+func readConfig() {
+	dat, _ := ioutil.ReadFile("test.json")
+	json.Unmarshal([]byte(dat), &config)
+	fmt.Println(config)
+	fmt.Println(config.Name)
+}
+
 func main() {
 	var wait sync.WaitGroup
 	wait.Add(2)
 
-	fmt.Println("Hello")
+	readConfig ()
+	fmt.Println("ESC/P POS Agent Ready.")
 
 	in := Open("COM2")
 	out := Open("COM1")

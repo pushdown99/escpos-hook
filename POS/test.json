@@ -1,0 +1,8 @@
+{
+ "Name": "starbucks",
+ "Register": "123-45-67890",
+ "Address": "seoul",
+ "POS": "COM1",
+ "Printer": "COM2",
+ "Using": true
+}
